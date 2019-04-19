@@ -1,0 +1,56 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  margin: 300px 10px;
+  font-size: 28pt;
+  color: white;
+}
+
+main{
+  height: 90%;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+.arena-main{
+  height: 100%;
+  width: 100vw;
+  background-image: url('http://rwallpapers.com/wp-content/uploads/2018/05/clash-royale-wallpaper-for-android.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.home-main{
+  height: 100%;
+  width: 100vw;
+  background-image: url('http://www.ubuntu-ast.org/largeimages/96/969419_clash-royale-wallpaper-hd.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.league-main{
+  height: 100%;
+  width: 100vw;
+  background-image: url('https://clashroyaletopdeck.com/wp-content/uploads/2017/03/clash-royale-league-system-1024x1024.jpg');
+  background-size: fill;
+  background-position: center;
+  color: white;
+}
+.body{
+  display: flex;
+}
+.footer{
+  height: 10%;
+  width: 100vw;
+  background-color: blue;
+  text-align: center;
+  color: white;
+}
+.nav{
+  height: 100vh;
+  width: 160px;
+  background-color: blue;
+  text-decoration: none;
+}
