@@ -6,13 +6,15 @@ class Arenas extends Component {
             <div className='arena-main'>
                 <h1>Arenas</h1>
                 {
-                    this.props.arenas.map( arena => 
-                        <button 
-                            key={arena.idName}
-                            >
-                            {arena.name}
-                        </button>
-                    )
+                this.props.arenas.map( arena => 
+                    <div
+                    className={arena.idName}
+                    key={arena.idName}
+                    >
+                    <img src={`http://www.clashapi.xyz/images/arenas/${arena.idName}.png`} alt='' />
+                    {arena.name}
+                </div>
+                )
 
                 }
             </div>

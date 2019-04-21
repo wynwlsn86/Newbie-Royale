@@ -12,6 +12,7 @@ class App extends Component {
       cards: [],
       arenas: [],
       leagues: [],
+      leaguePics: [],
       chests: []
     }
     
@@ -20,6 +21,7 @@ class App extends Component {
     this.getCards();
     this.getArenas();
     this.getLeagues();
+    // this.getLeaguePics();
     this.getChests();
   }
 
@@ -38,6 +40,11 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({leagues: data}));
   }
+  // getLeaguePics() {
+  //   fetch(`http://www.clashapi.xyz/api/images/leagues/royal-arena.png`)
+  //   .then(response => response.json())
+  //   .then(data => this.setState({leaguesPics: data}));
+  // }
     getChests() {
     fetch('http://www.clashapi.xyz/api/chests')
       .then(response => response.json())

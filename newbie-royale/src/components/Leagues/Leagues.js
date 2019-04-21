@@ -6,12 +6,14 @@ class Leagues extends Component {
             <div className='league-main'>
                 <h1>Leagues</h1>
                 {//Gonna need to splice out the first element.
-                    this.props.leagues.map( leagues => 
-                        <button 
-                            key={leagues.idName}
+                    this.props.leagues.map( league => 
+                        <div
+                            className={league.idName}
+                            key={league.idName}
                             >
-                            {leagues.name}
-                        </button>
+                            <img src={`http://www.clashapi.xyz/images/leagues/${league.idName}.png`} alt='' />
+                            {league.name}
+                        </div>
                     )
 
                 }

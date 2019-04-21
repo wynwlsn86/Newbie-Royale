@@ -8,7 +8,9 @@ a{
   font-size: 28pt;
   color: white;
 }
-
+img{
+  width: 250px;
+}
 main{
   height: 90%;
   width: 100vw;
@@ -21,6 +23,17 @@ main{
   background-image: url('http://rwallpapers.com/wp-content/uploads/2018/05/clash-royale-wallpaper-for-android.jpg');
   background-size: cover;
   background-position: center;
+  overflow-y: scroll;
+  position: fixed;
+}
+.cards-main{
+  height: 100%;
+  width: 100vw;
+  background-image: url('http://rwallpapers.com/wp-content/uploads/2018/05/clash-royale-wallpaper-for-android.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+  position: fixed;
 }
 .home-main{
   height: 100%;
@@ -29,14 +42,17 @@ main{
   background-size: cover;
   background-position: center;
   color: white;
+  overflow-y: scroll;
 }
 .league-main{
   height: 100%;
   width: 100vw;
   background-image: url('https://clashroyaletopdeck.com/wp-content/uploads/2017/03/clash-royale-league-system-1024x1024.jpg');
+  position: fixed;
   background-size: fill;
   background-position: center;
   color: white;
+  overflow-y: scroll;
 }
 .body{
   display: flex;
