@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 
 class SelectedCard extends Component {
+    
     render() {
         return (
-            //Want to reuse this so it will also work with leagues/arenas on select
-            //Not rendering anything. also props showing as Context.Provider(?)
-            <div>
-                <p>Selected Card</p>
-                <img src={`http://www.clashapi.xyz/images/cardss/royal-arena.png`} alt='' />
+        <div className='cards-main'>
+            <div className='card-bg'>
+                <button onClick={this.props.goBack}>Back</button>
+                Card
+                <div>{this.props.card.name}</div>
+                <img src={`http://www.clashapi.xyz/images/cards/${this.props.card.idName}.png`} alt='' />
+                <div>{this.props.card.elixirCost}</div>
+                <div>{this.props.card.type}</div>
+                <div>{this.props.card.rarity}</div>
+                <div>{this.props.card.description}</div>
             </div>
+        </div>
         );
     }
 }

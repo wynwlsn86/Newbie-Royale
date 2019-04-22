@@ -1,54 +1,73 @@
 import React, { Component } from 'react';
 import SelectedCard from '../SelectedCard/SelectedCard'
 import Search from '../Search/Search'
-import { Route, Link } from 'react-router-dom'
 
 class Cards extends Component {
     constructor() {
         super();
         this.state= {
             card: [],
-            search: ''
+            search: '',
+            select: '',
+            cardSelected: false
         }
         this.selectCard = this.selectCard.bind(this);
         this.searchCards = this.searchCards.bind(this);
+        this.goBack = this.goBack.bind(this);
     }
 
     selectCard = (e) => {
-        console.log(e.target.getAttribute('data-key'));
+        console.log('hello');
+
+        //i want to set the state of card to the index of (id)
+        this.setState({
+                        cardSelected: true,
+                        card: this.props.cards[e.target.id]});
+        console.log(e.target.id)
     }
 
     searchCards = (e) => {
         e.preventDefault();
     }
+
+    goBack = () => {
+        this.setState({cardSelected: false});
+    }
     
     render() {
-        return (
-            <div className='cards-main'>
-                <h1>Cards</h1>
-                <Search 
-                    submit={this.searchCards}
-                    />
-                {
-                    this.props.cards.map( card => 
-                        <div
-                        className={card.idName}
-                        key={card.idName}
-                        >
-                        {/* <img src={`http://www.clashapi.xyz/images/cardss/${card.idName}.png`} alt='' /> */}
-                        <Link to='/SelectedCard'>{card.name}</Link>
-                        <Route 
-                            path='/SelectedCard' 
-                            render={() => 
-                            <SelectedCard 
-                                card={this.card}
-                        />} />
 
-                    </div>
-                    )
-                }
-            </div>
-        );
+        if(this.state.cardSelected === true){
+            return (
+                <SelectedCard 
+                    card={this.state.card}
+                    goBack={this.goBack}
+                    cardSelected={this.state.cardSelected}
+                />
+            )
+        }
+        else{
+            return (
+                <div className='cards-main'>
+                    <h1>Cards</h1>
+                    <Search 
+                        submit={this.searchCards}
+                        />
+                    {
+                        this.props.cards.map( (card, id) => 
+                            <div
+                            id={id}
+                            className={card.idName}
+                            key={card.idName}
+                            onClick={this.selectCard}
+                            >
+                                {card.name}
+                             </div>
+                        )
+                    }
+                </div>
+            );
+        }
+
     }
 }
 
