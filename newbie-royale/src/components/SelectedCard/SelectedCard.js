@@ -8,7 +8,7 @@ class SelectedCard extends Component {
             <div className='card-bg'>
                 <button onClick={this.props.goBack}>Back</button>
                 Card
-                <div>{this.props.card.name}</div>
+                <div >{this.props.card.name}</div>
                 <img src={`http://www.clashapi.xyz/images/cards/${this.props.card.idName}.png`} alt='' />
                 <div>{this.props.card.elixirCost}</div>
                 <div>{this.props.card.type}</div>
