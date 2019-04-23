@@ -10,7 +10,7 @@ class Search extends Component {
             <div>
                 <form onSubmit={this.prevent}>
                     <input onChange={this.props.search}type='text' placeholder='Search here...'></input>
-                    <button>Clear</button>
+                    
                 </form>
             </div>
         );

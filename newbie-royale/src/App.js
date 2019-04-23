@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import '../node_modules/bulma/css/bulma.css'
 import Nav from './components/Nav/Nav'
 import Main from './components/Main/Main'
 import Footer from './components/Footer/Footer'
-
-
-import { Route, Link } from 'react-router-dom'
-import Home from './components/Home/Home'
-import Cards from './components/Cards/Cards'
-import Chests from './components/Chests/Chests'
-import Arenas from './components/Areans/Arenas'
-import Leagues from './components/Leagues/Leagues'
 
 
 class App extends Component {
@@ -60,7 +53,7 @@ class App extends Component {
   }
   render() {
     return (
-        <div className='body'>
+        <div>
 {/* 
 
           <div className='nav'>

@@ -51,38 +51,28 @@ class Cards extends Component {
         else{
             return (
                 <div className='cards-main'>
-                    <h1>Cards</h1>
+                    <h1 className='page-heading'>Cards</h1>
                     <Search 
                         search={this.searchCards}
                         clear={this.clear}
                         />
-                    {/* {
-                        this.props.cards.map( (card, id) => 
-                            <div
-                            id={id}
-                            className={card.idName}
-                            key={card.idName}
-                            onClick={this.selectCard}
-                            >
-                                {card.name}
-                            </div>
-                        )
-                    } */}
 
-                {
-                    this.props.cards.filter(card => {
-                        return card.name.toLowerCase().includes(this.state.search.toLowerCase());
-                    }).map((card, id) => 
-                        <div
-                        id={id}
-                        className={card.idName}
-                        key={card.idName}
-                        onClick={this.selectCard}
-                        >
-                            {card.name}
-                        </div>
-                    )
-                }
+                    <div className='flex-list'>
+                        {
+                            this.props.cards.filter(card => {
+                                return card.name.toLowerCase().includes(this.state.search.toLowerCase());
+                            }).map((card, id) => 
+                                <div
+                                id={id}
+                                className='card-list box'
+                                key={card.idName}
+                                onClick={this.selectCard}
+                                >
+                                    {card.name}
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
             );
         }

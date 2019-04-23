@@ -9,12 +9,51 @@ import Leagues from '../Leagues/Leagues'
 class Home extends Component {
     render() {
         return (
-            <div className='home-main'>
-                <ul>
-                <li><Link to='/Cards'>Cards</Link></li>
-                <li><Link to='/Chests'>Chests</Link></li>
-                <li><Link to='/Arenas'>Arenas</Link></li>
-                <li><Link to='/Leagues'>Leagues</Link></li>
+            <div>
+                {/* button is-link is-large is-fullwidth is-info */}
+
+
+                <div className=" tile is-ancestor">
+  <div className=" tile is-parent is info">
+    <article className=" tile  is-child box is-info">
+    <Link  className='white-text' to='/Cards'>Cards</Link>
+    </article>
+  </div>
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+    <Link  className='white-text' to='/Chests'>Chests</Link>
+    </article>
+  </div>
+  
+
+</div>
+<div className="tile is-ancestor">
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+    <Link  className='white-text' to='/Arenas'>Arenas</Link>
+    </article>
+  </div>
+  <div className="tile is-parent">
+    <article className="tile is-child box">
+    <Link  className='white-text' to='/Leagues'>Leagues</Link>
+    </article>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+             
+                {/* <ul>
+                <div className="tile is-vertical is-8"><Link  to='/Cards'>Cards</Link></div>
+                <Link className="home-buttons" to='/Chests'>Chests</Link>
+                <Link className="home-buttons" to='/Arenas'>Arenas</Link>
+                <Link className="home-buttons" to='/Leagues'>Leagues</Link>
                 </ul>
                 <Route 
                     path='/Cards' 
@@ -39,7 +78,7 @@ class Home extends Component {
                     render={() => 
                     <Leagues 
                         leagues={this.props.leagues}
-                />} />
+                />} /> */}
             </div>
         );
     }

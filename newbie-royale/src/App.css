@@ -2,20 +2,8 @@
   padding: 0;
   margin: 0;
 }
-a{
-  text-decoration: none;
-  margin: 300px 10px;
-  font-size: 28pt;
-  color: white;
-}
-img{
-  width: 250px;
-}
-main{
-  height: 90%;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
+.page-heading{
+  font-size: 70pt;
 }
 .arena-main{
   height: 100%;
@@ -24,7 +12,10 @@ main{
   background-size: cover;
   background-position: center;
   overflow-y: scroll;
-  position: fixed;
+
+}
+.back-button{
+  margin-left: 20px;
 }
 .cards-main{
   height: 100%;
@@ -32,8 +23,17 @@ main{
   background-image: url('http://rwallpapers.com/wp-content/uploads/2018/05/clash-royale-wallpaper-for-android.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   overflow-y: scroll;
-  position: fixed;
+
+}
+.chest-list{
+  background-color: blue;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  color: white;
 }
 .home-main{
   height: 100%;
@@ -54,19 +54,44 @@ main{
   color: white;
   overflow-y: scroll;
 }
-.body{
-  display: flex;
+button{
+  width: 100px;
+  height: 50px;
+  border-radius: 4px;
+  margin: 20px 80px;
 }
-.footer{
-  height: 10%;
-  width: 100vw;
+input{
+  margin-top: 100px;
+  height: 50px;
+  font-size: 22pt;
+  border-radius: 4px;
+}
+article.tile{
+  background-color: blue;
+  background-size: 100%;
+  text-align: center;
+}
+.white-text{
+  color: white;
+  font-size: 28pt;
+}
+.card-list{
+  width: 200px;
+  text-align: center;
+  background-color: blue;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+}
+.selected-card{
+  width: 600px;
   background-color: blue;
   text-align: center;
   color: white;
 }
-.nav{
-  height: 100vh;
-  width: 160px;
-  background-color: blue;
-  text-decoration: none;
+.flex-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+
