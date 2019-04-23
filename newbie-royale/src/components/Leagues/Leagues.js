@@ -12,7 +12,9 @@ class Leagues extends Component {
                             key={league.idName}
                             >
                             <img src={`http://www.clashapi.xyz/images/leagues/${league.idName}.png`} alt='' />
-                            {league.name}
+                            <div>{league.name}</div>
+                            <div>Victory Gold: {league.victoryGold}</div>
+                            <div>Trophy Requirement: {league.minTrophies}</div>
                         </div>
                     )
 

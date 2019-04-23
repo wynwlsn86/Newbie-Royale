@@ -27,11 +27,14 @@ class Cards extends Component {
     }
 
     searchCards = (e) => {
-        e.preventDefault();
+        this.setState({search: e.target.value });
     }
 
     goBack = () => {
         this.setState({cardSelected: false});
+    }
+    clear = () => {
+        this.setState({search: ''});
     }
     
     render() {
@@ -50,9 +53,10 @@ class Cards extends Component {
                 <div className='cards-main'>
                     <h1>Cards</h1>
                     <Search 
-                        submit={this.searchCards}
+                        search={this.searchCards}
+                        clear={this.clear}
                         />
-                    {
+                    {/* {
                         this.props.cards.map( (card, id) => 
                             <div
                             id={id}
@@ -61,9 +65,24 @@ class Cards extends Component {
                             onClick={this.selectCard}
                             >
                                 {card.name}
-                             </div>
+                            </div>
                         )
-                    }
+                    } */}
+
+                {
+                    this.props.cards.filter(card => {
+                        return card.name.toLowerCase().includes(this.state.search.toLowerCase());
+                    }).map((card, id) => 
+                        <div
+                        id={id}
+                        className={card.idName}
+                        key={card.idName}
+                        onClick={this.selectCard}
+                        >
+                            {card.name}
+                        </div>
+                    )
+                }
                 </div>
             );
         }
@@ -72,3 +91,4 @@ class Cards extends Component {
 }
 
 export default Cards;
+

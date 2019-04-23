@@ -27,6 +27,7 @@ class Main extends Component {
                     path='/Arenas' 
                     render={() => 
                     <Arenas 
+                        cards={this.props.cards}
                         arenas={this.props.arenas}
                 />} />
                 <Route 
