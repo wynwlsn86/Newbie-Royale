@@ -13,8 +13,9 @@ class Nav extends Component {
           //     <li><Link to='/Leagues'>Leagues</Link></li>
           //   </ul>
           // </div>
-          <nav class="navbar" role="navigation" aria-label="main navigation">
+          <nav class="nav-bar is-link navbar" role="navigation" aria-label="main navigation">
             <div className='container'>
+              <img className='navbar-brand' src='https://clashroyale.com/uploaded-images-blog/_232x109_crop_center-center_90/logo-1.png?mtime=20180403175110' alt='' />
               <Link className='navbar-item is-size-3'
                     to='/'>Home</Link>
               <Link className='navbar-item is-size-3'

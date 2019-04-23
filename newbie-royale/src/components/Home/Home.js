@@ -14,12 +14,12 @@ class Home extends Component {
 
 
                 <div className=" tile is-ancestor">
-  <div className=" tile is-parent is info">
+  <div className=" tile is-parent is info link-margin">
     <article className=" tile  is-child box is-info">
     <Link  className='white-text' to='/Cards'>Cards</Link>
     </article>
   </div>
-  <div className="tile is-parent">
+  <div className="tile is-parent link-margin">
     <article className="tile is-child box">
     <Link  className='white-text' to='/Chests'>Chests</Link>
     </article>
@@ -28,12 +28,12 @@ class Home extends Component {
 
 </div>
 <div className="tile is-ancestor">
-  <div className="tile is-parent">
+  <div className="tile is-parent link-margin">
     <article className="tile is-child box">
     <Link  className='white-text' to='/Arenas'>Arenas</Link>
     </article>
   </div>
-  <div className="tile is-parent">
+  <div className="tile is-parent link-margin">
     <article className="tile is-child box">
     <Link  className='white-text' to='/Leagues'>Leagues</Link>
     </article>

@@ -72,8 +72,8 @@ class Chests extends Component {
                     {
                         this.state.reducedChests.map( (chest, id) => {
                             return(
-                                <div>
-                                    <img src={`http://www.clashapi.xyz/images/chests/${this.state.chestIdName[chest.order]}.png`} alt='' />
+                                <div className='chest-col'>
+                                    <img className='chest-image' src={`http://www.clashapi.xyz/images/chests/${this.state.chestIdName[chest.order]}.png`} alt='' />
                                     <div className='chest-list'>
                                         <div id={id}>{chest.name}</div>
                                         <div id={id}>Total Cards: {chest.cards.number} <br />{chest.cards.minEpic} Minimum Epic Cards <br /> {chest.cards.minRare} Minimum Rare Cards </div>

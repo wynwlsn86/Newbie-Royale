@@ -35,6 +35,16 @@
   border-radius: 4px;
   color: white;
 }
+.chest-image{
+  margin: 30px auto;
+  text-align: center;
+  width: 240px;
+}
+.chest-col{
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+}
 .home-main{
   height: 100%;
   width: 100vw;
@@ -53,6 +63,12 @@
   background-position: center;
   color: white;
   overflow-y: scroll;
+}
+.nav-bar{
+  background-color: grey;
+}
+.link-margin{
+  margin-top: 50px;
 }
 button{
   width: 100px;

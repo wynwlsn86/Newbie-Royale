@@ -47,6 +47,7 @@ class Cards extends Component {
                     cardSelected={this.state.cardSelected}
                 />
             )
+        
         }
         else{
             return (
