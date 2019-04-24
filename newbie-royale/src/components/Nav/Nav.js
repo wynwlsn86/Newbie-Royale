@@ -4,15 +4,6 @@ import { Route, Link } from 'react-router-dom'
 class Nav extends Component {
     render() {
         return (
-          // <div className='nav'>
-          //   <ul>
-          //     <li><Link to='/'>Home</Link></li>
-          //     <li><Link to='/Cards'>Cards</Link></li>
-          //     <li><Link to='/Chests'>Chests</Link></li>
-          //     <li><Link to='/Arenas'>Arenas</Link></li>
-          //     <li><Link to='/Leagues'>Leagues</Link></li>
-          //   </ul>
-          // </div>
           <nav class="nav-bar is-link navbar" role="navigation" aria-label="main navigation">
             <div className='container'>
               <img className='navbar-brand' src='https://clashroyale.com/uploaded-images-blog/_232x109_crop_center-center_90/logo-1.png?mtime=20180403175110' alt='' />

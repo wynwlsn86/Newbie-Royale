@@ -52,7 +52,7 @@ class Cards extends Component {
         else{
             return (
                 <div className='cards-main'>
-                    <h1 className='page-heading'>Cards</h1>
+                    <h1 className='page-heading center-heading'>Cards</h1>
                     <Search 
                         search={this.searchCards}
                         clear={this.clear}

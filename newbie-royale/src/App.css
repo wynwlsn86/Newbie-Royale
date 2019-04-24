@@ -12,6 +12,7 @@
   background-size: cover;
   background-position: center;
   overflow-y: scroll;
+  position: fixed;
 
 }
 .back-button{
@@ -20,25 +21,44 @@
 .cards-main{
   height: 100%;
   width: 100vw;
-  background-image: url('http://rwallpapers.com/wp-content/uploads/2018/05/clash-royale-wallpaper-for-android.jpg');
+  background-image: url('https://images6.alphacoders.com/855/thumb-1920-855977.jpg');
+  /* background-color: rgb(68, 68, 97); */
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  /* position: fixed; */
+}
+.chests-main{
+  /* background-image: url('https://wallpapercave.com/wp/wp1815976.jpg'); */
+  background-image: url('https://i.pinimg.com/originals/85/0d/80/850d80424364220b7fa6e757dd3716f4.jpg');
+  height: 100%;
+  width: 100vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* background-size: 600px 800px; */
   overflow-y: scroll;
-
+  position: fixed;
 }
 .chest-list{
   background-color: blue;
   width: 500px;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
   border-radius: 4px;
   color: white;
+  padding: 10px;
+
 }
 .chest-image{
   margin: 30px auto;
   text-align: center;
   width: 240px;
+}
+.league-img{
+  width: 200px;
+  margin: 30px;
 }
 .chest-col{
   display: flex;
@@ -58,17 +78,25 @@
   height: 100%;
   width: 100vw;
   background-image: url('https://clashroyaletopdeck.com/wp-content/uploads/2017/03/clash-royale-league-system-1024x1024.jpg');
-  position: fixed;
-  background-size: fill;
+
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   color: white;
   overflow-y: scroll;
+  text-align: center;
+  position: fixed;
 }
 .nav-bar{
   background-color: grey;
+  position: fixed;
 }
 .link-margin{
   margin-top: 50px;
+}
+.home-bg{
+  height: 500px;
+  background-color: rgb(68, 68, 97);
 }
 button{
   width: 100px;
@@ -87,6 +115,7 @@ article.tile{
   background-size: 100%;
   text-align: center;
 }
+
 .white-text{
   color: white;
   font-size: 28pt;
@@ -98,6 +127,15 @@ article.tile{
   margin-top: 20px;
   color: white;
   font-weight: bold;
+}
+.card-list:hover {
+  color: grey;
+  cursor: pointer;
+}
+.center-heading{
+  text-align: center;
+  color: white;
+  text-decoration: underline;
 }
 .selected-card{
   width: 600px;

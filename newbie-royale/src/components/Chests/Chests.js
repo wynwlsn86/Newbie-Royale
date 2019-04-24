@@ -66,8 +66,8 @@ class Chests extends Component {
         }
         else{
             return (
-                <div className='chest-main'>
-                    <h1>Chests</h1>
+                <div className='chests-main'>
+                    <h1 className='page-heading center-heading'>Chests</h1>
 
                     {
                         this.state.reducedChests.map( (chest, id) => {
