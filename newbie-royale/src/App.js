@@ -47,7 +47,7 @@ class App extends Component {
     return (
         <div>
           <Nav />
-          <div>
+          <div className='fill-bg'>
             <Main 
               cards={this.state.cards}
               chests={this.state.chests}

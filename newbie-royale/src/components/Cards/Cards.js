@@ -15,14 +15,23 @@ class Cards extends Component {
         this.searchCards = this.searchCards.bind(this);
         this.goBack = this.goBack.bind(this);
     }
+    
 
     selectCard = (e) => {
-        console.log('hello');
-
+        for(let i = 0; i < this.props.cards.length; i++){
+            console.log(`${this.props.cards[i].copyId}`, e.target.id);
+            if(this.props.cards[i].copyId == e.target.id){
+                this.setState({card: this.props.cards[i]});
+                console.log(e.target.id)
+            }
+            else{
+                console.log('bye')
+            }
+        }
         //i want to set the state of card to the index of (id)
         this.setState({
-                        cardSelected: true,
-                        card: this.props.cards[e.target.id]});
+                        cardSelected: true
+                        });
         console.log(e.target.id)
     }
 
@@ -33,12 +42,8 @@ class Cards extends Component {
     goBack = () => {
         this.setState({cardSelected: false});
     }
-    clear = () => {
-        this.setState({search: ''});
-    }
     
     render() {
-
         if(this.state.cardSelected === true){
             return (
                 <SelectedCard 
@@ -64,7 +69,7 @@ class Cards extends Component {
                                 return card.name.toLowerCase().includes(this.state.search.toLowerCase());
                             }).map((card, id) => 
                                 <div
-                                id={id}
+                                id={card.copyId}
                                 className='card-list box'
                                 key={card.idName}
                                 onClick={this.selectCard}

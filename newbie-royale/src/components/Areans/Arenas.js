@@ -20,28 +20,30 @@ class Arenas extends Component {
 
         return (
             <div className='arena-main'>
-                <h1>Arenas</h1>
+                <h1 className='center-heading page-heading'>Arenas</h1>
                 {
                 this.props.arenas.map( arena => 
                     <div
-                    className={arena.idName}
+                    className='arena-flex'
                     key={arena.idName}
                     >
-                    <img src={`http://www.clashapi.xyz/images/arenas/${arena.idName}.png`} alt='' />
-                    <div>{arena.name}</div>
-                    <div>Victory Gold: {arena.victoryGold}</div>
-                    <div>Required Trophies: {arena.minTrophies}</div>
-                    {
-                        arena.cardUnlocks.map( card => {
-                            let stuff = []
-                            for (let i = 0; i < this.props.cards.length; i++){
-                                if(card === this.props.cards[i]._id ){
-                                    stuff.push(<div key={this.props.cards.name}></div>);
+                    <img  className='arena-img' src={`http://www.clashapi.xyz/images/arenas/${arena.idName}.png`} alt='' />
+                    <div className='arena-box'>
+                        <div>{arena.name}</div>
+                        <div>Victory Gold: {arena.victoryGold}</div>
+                        <div>Required Trophies: {arena.minTrophies}</div>
+                        {/* {
+                            arena.cardUnlocks.map( card => {
+                                let stuff = []
+                                for (let i = 0; i < this.props.cards.length; i++){
+                                    if(card === this.props.cards[i]._id ){
+                                        stuff.push(<div key={this.props.cards.name}></div>);
+                                    }
                                 }
-                            }
-                            console.log(stuff);
-                        })
-                    }
+                                console.log(stuff);
+                            })
+                        } */}
+                    </div>
 
 
 
