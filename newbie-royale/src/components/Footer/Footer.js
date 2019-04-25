@@ -6,7 +6,6 @@ class Footer extends Component {
             <footer className='footer'>
                 <p>Created By Wayne Wilson 2019 </p>
                 <p>Not affliliated with Clash Royale</p>
-                {/* <p>test</p> */}
             </footer>
         );
     }

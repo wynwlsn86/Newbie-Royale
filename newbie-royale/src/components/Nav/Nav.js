@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Nav extends Component {
     render() {
+      const toggleFlash = this.props.flashState === true ? 'flash-ani' : 'cards-in-deck';
+      const toggleRemoveFlash = this.props.toggleRemoveFlash === true ? 'flash-ani-remove' : 'cards-in-deck';
         return (
           <nav class="nav-bar is-link navbar" role="navigation" aria-label="main navigation">
             <div className='container'>
@@ -18,8 +20,7 @@ class Nav extends Component {
               <Link className='navbar-item is-size-3' 
                     to='/Leagues'>Leagues</Link>
               </div>
-              <Link onClick={this.props.showDeck} to='/Cards'><h1 className='cards-in-deck'>Cards In Deck: {this.props.deck.length} <br />* 8 Cards Required *</h1></Link>
-              {/* add classname flash-ani to this ^ when a card is added to deck */}
+              <Link onClick={this.props.showDeck} to='/Cards'><h1 className={` ${toggleFlash} ${toggleRemoveFlash}`}>Cards In Deck: {this.props.deck.length} <br />* 8 Cards Required *</h1></Link>
             </nav>
         );
     }

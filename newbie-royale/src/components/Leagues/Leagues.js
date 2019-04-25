@@ -5,7 +5,7 @@ class Leagues extends Component {
         return (
             <div className='league-main'>
                 <h1 className='page-heading center-heading'>Leagues</h1>
-                {//Gonna need to splice out the first element.
+                {
                     this.props.leagues.map( league => 
                         <div
                             key={league.idName}
@@ -18,7 +18,6 @@ class Leagues extends Component {
                             </div>
                         </div>
                     )
-
                 }
             </div>
         );

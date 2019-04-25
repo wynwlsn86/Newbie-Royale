@@ -27,6 +27,9 @@ class Main extends Component {
                         goBackDeck={this.props.goBackDeck}
                         search={this.props.search}
                         searchCards={this.props.searchCards}
+                        removeCard={this.props.removeCard}
+                        toggleFlash={this.props.toggleFlash}
+                        toggleRemoveFlash={this.props.toggleRemoveFlash}
                 />} />
                 <Route 
                     path='/Chests' 

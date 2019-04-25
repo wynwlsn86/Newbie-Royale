@@ -17,6 +17,7 @@ class Cards extends Component {
             <Deck 
                 goBack={this.props.goBackDeck}
                 deck={this.props.deck}
+                removeCard={this.props.removeCard}
             />
             )
         }
@@ -27,6 +28,10 @@ class Cards extends Component {
                     goBack={this.props.goBack}
                     cardSelected={this.state.cardSelected}
                     addToDeck={this.props.addToDeck}
+                    removeCard={this.props.removeCard}
+                    toggleFlash={this.props.toggleFlash}
+                    toggleRemoveFlash={this.props.toggleRemoveFlash}
+                    deck={this.props.deck}
                 />
             )
         

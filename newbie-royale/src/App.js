@@ -19,7 +19,9 @@ class App extends Component {
       deck: [],
       cardSelected: false,
       deckSelected: false,
-      search: ''
+      search: '',
+      flashState: false,
+      flashRemoveState: false
     }
     this.goBack = this.goBack.bind(this);
     this.addToDeck = this.addToDeck.bind(this);
@@ -27,12 +29,21 @@ class App extends Component {
     this.goBackDeck = this.goBackDeck.bind(this);
     this.showDeck = this.showDeck.bind(this);
     this.searchCards = this.searchCards.bind(this);
+    this.removeCard = this.removeCard.bind(this);
+    this.toggleFlash = this.toggleFlash.bind(this);
+    this.toggleRemoveFlash = this.toggleRemoveFlash.bind(this);
   }
   componentDidMount() {
     this.getCards();
     this.getArenas();
     this.getLeagues();
     this.getChests();
+  }
+  toggleFlash = () => {
+    this.setState({flashState: !this.state.flashState});
+  }
+  toggleRemoveFlash = () => {
+    this.setState({flashRemoveState: !this.state.flashRemoveState});
   }
   getCards() {
     fetch('http://www.clashapi.xyz/api/cards')
@@ -64,6 +75,23 @@ class App extends Component {
                     cardSelected: true
                     });
   }
+  removeCard = (e) => {
+    if(this.state.deck.length > 0){
+      for(let i = 0; i < this.state.deck.length; i++){
+        if(this.state.deck[i].copyId == e.target.id){
+          this.setState(state => {
+            const deck = this.state.deck;
+            deck.splice(i, 1);
+            return deck;
+            
+          })
+      }
+    }
+  }
+    else{
+      alert('Card is not in deck')
+    }
+  }
   goBack = () => {
     this.setState({
       cardSelected: false,
@@ -78,9 +106,7 @@ class App extends Component {
   }
   searchCards = (e) => {
     this.setState({search: e.target.value });
-    console.log('search');
   }
-
   addToDeck = () => {
     if(this.state.deck.length > 7){
         alert('Deck is full. 8 Card Maximum')
@@ -112,7 +138,7 @@ class App extends Component {
             } 
         }
     }
-}
+  }
   render() {
     return (
         <div>
@@ -121,6 +147,8 @@ class App extends Component {
             showDeck={this.showDeck}
             goBackDeck={this.goBackDeck}
             deckSelected={this.state.deckSelected}
+            flashState={this.state.flashState}
+            flashRemoveState={this.state.flashRemoveState}
           />
           <div className='fill-bg'>
             <Main 
@@ -139,6 +167,9 @@ class App extends Component {
               showDeck={this.showDeck}
               search={this.state.search}
               searchCards={this.searchCards}
+              removeCard={this.removeCard}
+              toggleFlash={this.toggleFlash}
+              toggleRemoveFlash={this.toggleRemoveFlash}
               />
             <Footer /> 
            </div>

@@ -27,10 +27,59 @@ main{
   100%{
     background-color: #3273dc;
   }
+  /* className={`box ${this.state.added ? flash : notFlash}`} */
 
 }
+.remove-button-selected-cards{
+  background-color: red;
+  border: none;
+  font-weight: bold;
+  width: 60px;
+  height: 30px;
+  margin-left: 80%;
+  margin-top: 10px;
+}
+.inside-modal-stuff{
+  background-color: blue;
+  text-align: center;
+  color: white;
+  height: 200px;
+  padding-top: 20px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.remove-button-deck{
+  background-color: red;
+  border: none;
+  font-weight: bold;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  position: relative;
+  margin-left: -125px;
+}
 .flash-ani{
-  animation: flash 2 ease-in-out forwards;
+  background-color: white;
+  color: blue;
+  margin: 10px;
+  margin-right: 20px;
+  font-size: 14pt;
+  text-align: center;
+  font-weight: bold;
+  border: solid white 1px;
+  padding: 4px;
+}
+.flash-ani-remove{
+  background-color: red;
+  color: black;
+  margin: 10px;
+  margin-right: 20px;
+  font-size: 14pt;
+  text-align: center;
+  font-weight: bold;
+  border: solid white 1px;
+  padding: 4px;
 }
 .tile-length{
   width: 620px;
@@ -41,6 +90,7 @@ main{
   margin-top: 10px;
 }
 .cards-in-deck{
+  border-radius: 4px;
   margin: 10px;
   margin-right: 20px;
   font-size: 14pt;
@@ -216,6 +266,8 @@ button{
 
 }
 .deck-box{
+  display: flex;
+  flex-wrap: wrap;
   height: 530px;
   margin: 40px auto;
   background-color: blue;

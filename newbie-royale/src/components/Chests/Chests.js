@@ -19,23 +19,9 @@ class Chests extends Component {
     componentDidMount() {
         this.reducedChests();
     }
-    
-    selectChest = (e) => {
-        console.log('hello');
-        this.setState({
-                        chestSelected: true,
-                        chest: this.props.chests[e.target.id]});
-        console.log(e.target.id)
-    }
-
-    searchChests = (e) => {
-        e.preventDefault();
-    }
-
     goBack = () => {
         this.setState({chestSelected: false});
     }
-
     filterChests = (e) => {
         this.props.chests.map(chest => {
             if(chest.name.includes(e.target.name)){
@@ -51,8 +37,6 @@ class Chests extends Component {
             this.setState({reducedChests: arr});
         }
     }
-    
-    
     render() {
         if(this.state.chestSelected === true){
             return (
@@ -93,20 +77,3 @@ class Chests extends Component {
 }
 
 export default Chests;
-
-
-                    // {/* {/* <Search 
-                    //     submit={this.searchChests}
-                    //     /> */}
-                    //     { 
-                            //     this.props.chests.map( (chest, id) => 
-                            //         <div
-                            //         id={id}
-                            //         className={chest.idName}
-                            //         key={chest.idName}
-                            //         onClick={this.selectChest}
-                            //         >
-                            //             {chest.name}
-                            //          </div>
-                            //     )
-                            // } */}
