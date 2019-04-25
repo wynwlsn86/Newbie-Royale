@@ -16,6 +16,12 @@ class Main extends Component {
                     render={() => 
                     <Cards 
                         cards={this.props.cards}
+                        deck={this.props.deck}
+                        addToDeck={this.props.addToDeck}
+                        card={this.props.card}
+                        selectCard={this.props.selectCard}
+                        cardSelected={this.props.cardSelected}
+                        goBack={this.props.goBack}
                 />} />
                 <Route 
                     path='/Chests' 

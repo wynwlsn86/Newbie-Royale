@@ -11,11 +11,17 @@ class App extends Component {
     super();
     this.state= {
       cards: [],
+      card: [],
       arenas: [],
       leagues: [],
       leaguePics: [],
-      chests: []
+      chests: [],
+      deck: [],
+      cardSelected: false
     }
+    this.goBack = this.goBack.bind(this);
+    this.addToDeck = this.addToDeck.bind(this);
+    this.selectCard = this.selectCard.bind(this);
   }
   componentDidMount() {
     this.getCards();
@@ -43,6 +49,54 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({chests: data}));
   }
+  selectCard = (e) => {
+    for(let i = 0; i < this.state.cards.length; i++){
+        if(this.state.cards[i].copyId == e.target.id){
+            this.setState({card: this.state.cards[i]});
+        }
+    }
+    this.setState({
+                    cardSelected: true
+                    });
+}
+goBack = () => {
+  this.setState({cardSelected: false});
+}
+
+  addToDeck = () => {
+    if(this.state.deck.length > 7){
+        alert('Deck is full. 8 Card Maximum')
+    }
+    else{
+        if(this.state.deck.length === 0){
+            this.setState(state => {
+                const deck = this.state.deck.push(this.state.card)
+                return deck;
+            });
+        }
+        else{
+            let shouldBeDeck = true;
+            for(let i = 0; i < this.state.deck.length; i++){
+                if(this.state.deck[i].copyId == this.state.card.copyId){
+                    alert('Already Selected This Card. Only 1 Per Card Allowed')
+                    shouldBeDeck = false;
+                }
+            }
+            if(shouldBeDeck){
+                this.setState(state => {
+                    const deck = this.state.deck;
+                    deck.push(this.state.card);
+                    return deck;
+                    
+                }
+            );
+        
+            } 
+        }
+    }
+
+
+}
   render() {
     return (
         <div>
@@ -53,6 +107,12 @@ class App extends Component {
               chests={this.state.chests}
               arenas={this.state.arenas}
               leagues={this.state.leagues}
+              deck={this.state.deck}
+              addToDeck={this.addToDeck}
+              card={this.state.card}
+              selectCard={this.selectCard}
+              cardSelected={this.state.cardSelected}
+              goBack={this.goBack}
               />
             <Footer /> 
            </div>

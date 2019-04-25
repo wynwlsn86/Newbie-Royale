@@ -7,6 +7,7 @@ class SelectedCard extends Component {
         <div className='cards-main'>
             <div className='card-bg'>
                 <button className='back-button' onClick={this.props.goBack}>Back</button>
+                <button className='back-button' onClick={this.props.addToDeck}>Add To Deck</button>
                 {/* <p>test</p> */}
                 <div className=' selected-card '>
                     <div><h1>{this.props.card.name}</h1></div>
@@ -15,6 +16,7 @@ class SelectedCard extends Component {
                     <div>{this.props.card.type}</div>
                     <div>{this.props.card.rarity}</div>
                     <div>{this.props.card.description}</div>
+                    
                 </div>
             </div>
         </div>

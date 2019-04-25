@@ -1,55 +1,50 @@
 import React, { Component } from 'react';
 import SelectedCard from '../SelectedCard/SelectedCard'
 import Search from '../Search/Search'
+import Deck from '../Deck/Deck'
 
 class Cards extends Component {
     constructor() {
         super();
         this.state= {
-            card: [],
             search: '',
             select: '',
-            cardSelected: false
+            deckSelected: false,
+            cardsInDeck: 0
         }
-        this.selectCard = this.selectCard.bind(this);
+ 
         this.searchCards = this.searchCards.bind(this);
-        this.goBack = this.goBack.bind(this);
+        this.goBackDeck = this.goBackDeck.bind(this);
     }
-    
 
-    selectCard = (e) => {
-        for(let i = 0; i < this.props.cards.length; i++){
-            console.log(`${this.props.cards[i].copyId}`, e.target.id);
-            if(this.props.cards[i].copyId == e.target.id){
-                this.setState({card: this.props.cards[i]});
-                console.log(e.target.id)
-            }
-            else{
-                console.log('bye')
-            }
-        }
-        //i want to set the state of card to the index of (id)
-        this.setState({
-                        cardSelected: true
-                        });
-        console.log(e.target.id)
-    }
+
 
     searchCards = (e) => {
         this.setState({search: e.target.value });
     }
-
-    goBack = () => {
-        this.setState({cardSelected: false});
+    goBackDeck = () => {
+        this.setState({deckSelected: false});
+    }
+    showDeck = () => {
+        this.setState({deckSelected: true})
     }
     
     render() {
-        if(this.state.cardSelected === true){
+        if(this.state.deckSelected === true){
+            return (
+            <Deck 
+                goBack={this.goBackDeck}
+                deck={this.props.deck}
+            />
+            )
+        }
+        else if(this.props.cardSelected === true){
             return (
                 <SelectedCard 
-                    card={this.state.card}
-                    goBack={this.goBack}
+                    card={this.props.card}
+                    goBack={this.props.goBack}
                     cardSelected={this.state.cardSelected}
+                    addToDeck={this.props.addToDeck}
                 />
             )
         
@@ -61,8 +56,9 @@ class Cards extends Component {
                     <Search 
                         search={this.searchCards}
                         clear={this.clear}
+                        selectCard={this.props.selectCard}
                         />
-
+                    <button id='input-style'onClick={this.showDeck}>Deck Cards:{this.props.deck.length}</button>
                     <div className='flex-list'>
                         {
                             this.props.cards.filter(card => {
@@ -72,7 +68,7 @@ class Cards extends Component {
                                 id={card.copyId}
                                 className='card-list box'
                                 key={card.idName}
-                                onClick={this.selectCard}
+                                onClick={this.props.selectCard}
                                 >
                                     {card.name}
                                 </div>

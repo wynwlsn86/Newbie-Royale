@@ -25,6 +25,7 @@ main{
 #input-style{
   color: black;
   text-decoration: none;
+  margin-top: 10px;
 }
 .arena-flex{
   display: flex;
@@ -187,6 +188,21 @@ button{
   border-radius: 4px;
   box-shadow: black 4px 7px 11px;
 
+}
+.deck-box{
+  height: 530px;
+  margin: 40px auto;
+  background-color: blue;
+  width: 930px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: black 4px 7px 11px;
+}
+.card-deck{
+  margin: 10px;
+  width: 180px;
 }
 .center-heading{
   text-align: center;
