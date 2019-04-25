@@ -4,7 +4,7 @@ class SelectedCard extends Component {
     changeThings = () => {
         this.props.toggleFlash();
         this.props.addToDeck();
-        setTimeout(this.props.toggleFlash, 500);
+        setTimeout(this.props.toggleFlash, 1000);
     }
     showDelete = () => {
         for(let i = 0; i < this.props.deck.length; i++){

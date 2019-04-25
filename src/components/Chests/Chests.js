@@ -12,8 +12,8 @@ class Chests extends Component {
             chestSelected: false,
             reducedChests: []
         }
-        this.selectChest = this.selectChest.bind(this);
-        this.searchChests = this.searchChests.bind(this);
+        // this.selectChest = this.selectChest.bind(this);
+        // this.searchChests = this.searchChests.bind(this);
         this.goBack = this.goBack.bind(this);
     }
     componentDidMount() {
@@ -52,7 +52,6 @@ class Chests extends Component {
             return (
                 <div className='chests-main'>
                     <h1 className='page-heading center-heading'>Chests</h1>
-
                     {
                         this.state.reducedChests.map( (chest, id) => {
                             return(
