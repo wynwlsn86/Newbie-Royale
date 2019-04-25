@@ -53,7 +53,7 @@ class Cards extends Component {
                             }).map((card, id) => 
                                 <div
                                 id={card.copyId}
-                                className='card-list box'
+                                className='card-list'
                                 key={card.idName}
                                 onClick={this.props.selectCard}
                                 >

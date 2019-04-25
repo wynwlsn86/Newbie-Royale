@@ -141,10 +141,13 @@ main{
   width: 500px;
   text-align: center;
   margin: 10px auto;
-  border-radius: 4px;
-  box-shadow: black 4px 7px 11px;
   color: white;
   padding: 10px;
+
+  /* border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  display: block;
+  padding: 1.25rem; */
 
 }
 .chest-image{
@@ -236,6 +239,12 @@ article.tile{
 button{
   cursor: pointer;
 }
+.box {
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  display: block;
+  padding: 1.25rem;
+}
 .white-text{
   color: white;
   font-size: 28pt;
@@ -244,10 +253,14 @@ button{
   width: 200px;
   text-align: center;
   background-color: blue;
-  box-shadow: black 4px 7px 11px;
   margin: 20px 15px;
   color: white;
   font-weight: bold;
+
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  display: block;
+  padding: 1.25rem;
 }
 .card-list:hover {
   color: grey;
