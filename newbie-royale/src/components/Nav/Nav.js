@@ -18,6 +18,8 @@ class Nav extends Component {
               <Link className='navbar-item is-size-3' 
                     to='/Leagues'>Leagues</Link>
               </div>
+              <Link onClick={this.props.showDeck} to='/Cards'><h1 className='cards-in-deck'>Cards In Deck: {this.props.deck.length} <br />* 8 Cards Required *</h1></Link>
+              {/* add classname flash-ani to this ^ when a card is added to deck */}
             </nav>
         );
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route} from 'react-router-dom'
 import Home from '../Home/Home'
 import Cards from '../Cards/Cards'
 import Chests from '../Chests/Chests'
@@ -22,6 +22,9 @@ class Main extends Component {
                         selectCard={this.props.selectCard}
                         cardSelected={this.props.cardSelected}
                         goBack={this.props.goBack}
+                        showDeck={this.props.showDeck}
+                        deckSelected={this.props.deckSelected}
+                        goBackDeck={this.props.goBackDeck}
                 />} />
                 <Route 
                     path='/Chests' 

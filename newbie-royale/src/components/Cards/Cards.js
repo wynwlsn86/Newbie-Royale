@@ -9,12 +9,9 @@ class Cards extends Component {
         this.state= {
             search: '',
             select: '',
-            deckSelected: false,
-            cardsInDeck: 0
         }
  
         this.searchCards = this.searchCards.bind(this);
-        this.goBackDeck = this.goBackDeck.bind(this);
     }
 
 
@@ -22,18 +19,12 @@ class Cards extends Component {
     searchCards = (e) => {
         this.setState({search: e.target.value });
     }
-    goBackDeck = () => {
-        this.setState({deckSelected: false});
-    }
-    showDeck = () => {
-        this.setState({deckSelected: true})
-    }
     
     render() {
-        if(this.state.deckSelected === true){
+        if(this.props.deckSelected === true){
             return (
             <Deck 
-                goBack={this.goBackDeck}
+                goBack={this.props.goBackDeck}
                 deck={this.props.deck}
             />
             )
@@ -58,7 +49,7 @@ class Cards extends Component {
                         clear={this.clear}
                         selectCard={this.props.selectCard}
                         />
-                    <button id='input-style'onClick={this.showDeck}>Deck Cards:{this.props.deck.length}</button>
+                    <button id='input-style'onClick={this.props.showDeck}>View Deck</button>
                     <div className='flex-list'>
                         {
                             this.props.cards.filter(card => {

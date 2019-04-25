@@ -17,11 +17,14 @@ class App extends Component {
       leaguePics: [],
       chests: [],
       deck: [],
-      cardSelected: false
+      cardSelected: false,
+      deckSelected: false,
     }
     this.goBack = this.goBack.bind(this);
     this.addToDeck = this.addToDeck.bind(this);
     this.selectCard = this.selectCard.bind(this);
+    this.goBackDeck = this.goBackDeck.bind(this);
+    this.showDeck = this.showDeck.bind(this);
   }
   componentDidMount() {
     this.getCards();
@@ -62,6 +65,12 @@ class App extends Component {
 goBack = () => {
   this.setState({cardSelected: false});
 }
+goBackDeck = () => {
+  this.setState({deckSelected: false});
+}
+showDeck = () => {
+  this.setState({deckSelected: true})
+}
 
   addToDeck = () => {
     if(this.state.deck.length > 7){
@@ -94,13 +103,16 @@ goBack = () => {
             } 
         }
     }
-
-
 }
   render() {
     return (
         <div>
-          <Nav />
+          <Nav 
+            deck={this.state.deck}
+            showDeck={this.showDeck}
+            goBackDeck={this.goBackDeck}
+            deckSelected={this.state.deckSelected}
+          />
           <div className='fill-bg'>
             <Main 
               cards={this.state.cards}
@@ -113,6 +125,9 @@ goBack = () => {
               selectCard={this.selectCard}
               cardSelected={this.state.cardSelected}
               goBack={this.goBack}
+              goBackDeck={this.goBackDeck}
+              deckSelected={this.state.deckSelected}
+              showDeck={this.showDeck}
               />
             <Footer /> 
            </div>
