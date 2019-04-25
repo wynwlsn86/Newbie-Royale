@@ -25,6 +25,8 @@ class Main extends Component {
                         showDeck={this.props.showDeck}
                         deckSelected={this.props.deckSelected}
                         goBackDeck={this.props.goBackDeck}
+                        search={this.props.search}
+                        searchCards={this.props.searchCards}
                 />} />
                 <Route 
                     path='/Chests' 

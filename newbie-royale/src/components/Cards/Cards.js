@@ -7,17 +7,8 @@ class Cards extends Component {
     constructor() {
         super();
         this.state= {
-            search: '',
-            select: '',
+            select: ''
         }
- 
-        this.searchCards = this.searchCards.bind(this);
-    }
-
-
-
-    searchCards = (e) => {
-        this.setState({search: e.target.value });
     }
     
     render() {
@@ -45,7 +36,7 @@ class Cards extends Component {
                 <div className='cards-main'>
                     <h1 className='page-heading center-heading'>Cards</h1>
                     <Search 
-                        search={this.searchCards}
+                        search={this.props.searchCards}
                         clear={this.clear}
                         selectCard={this.props.selectCard}
                         />
@@ -53,7 +44,7 @@ class Cards extends Component {
                     <div className='flex-list'>
                         {
                             this.props.cards.filter(card => {
-                                return card.name.toLowerCase().includes(this.state.search.toLowerCase());
+                                return card.name.toLowerCase().includes(this.props.search.toLowerCase());
                             }).map((card, id) => 
                                 <div
                                 id={card.copyId}

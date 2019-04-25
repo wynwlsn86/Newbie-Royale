@@ -19,12 +19,14 @@ class App extends Component {
       deck: [],
       cardSelected: false,
       deckSelected: false,
+      search: ''
     }
     this.goBack = this.goBack.bind(this);
     this.addToDeck = this.addToDeck.bind(this);
     this.selectCard = this.selectCard.bind(this);
     this.goBackDeck = this.goBackDeck.bind(this);
     this.showDeck = this.showDeck.bind(this);
+    this.searchCards = this.searchCards.bind(this);
   }
   componentDidMount() {
     this.getCards();
@@ -61,16 +63,23 @@ class App extends Component {
     this.setState({
                     cardSelected: true
                     });
-}
-goBack = () => {
-  this.setState({cardSelected: false});
-}
-goBackDeck = () => {
-  this.setState({deckSelected: false});
-}
-showDeck = () => {
-  this.setState({deckSelected: true})
-}
+  }
+  goBack = () => {
+    this.setState({
+      cardSelected: false,
+      search: ''
+    });
+  }
+  goBackDeck = () => {
+    this.setState({deckSelected: false});
+  }
+  showDeck = () => {
+    this.setState({deckSelected: true})
+  }
+  searchCards = (e) => {
+    this.setState({search: e.target.value });
+    console.log('search');
+  }
 
   addToDeck = () => {
     if(this.state.deck.length > 7){
@@ -128,10 +137,11 @@ showDeck = () => {
               goBackDeck={this.goBackDeck}
               deckSelected={this.state.deckSelected}
               showDeck={this.showDeck}
+              search={this.state.search}
+              searchCards={this.searchCards}
               />
             <Footer /> 
            </div>
-          
         </div>
     );
   }
