@@ -1,6 +1,6 @@
 <h1>Newbie Royale</h1>
 
-<h2><a href='http://newbie-royale.herokuapp.com/Cards'>Heroku Deployed Newbie Royale</a><h2>
+<h2><a href='http://newbie-royale.herokuapp.com/'>Heroku Deployed Newbie Royale</a><h2>
 
 <h2><ul>Description</ul></h2>
 
