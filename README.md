@@ -1,5 +1,7 @@
 <h1>Newbie Royale</h1>
 
+<h2><a href='http://newbie-royale.herokuapp.com/Cards'>Heroku Deployed Newbie Royale</a><h2>
+
 <h2><ul>Description</ul></h2>
 
 Newbie Royale is a Clash Royale tool to assist new players with information on contents of chests, trophy requirements for leagues and arenas, and all the cards avaiable. The Tool also allows players to build a deck.
